@@ -5,4 +5,8 @@ defmodule Test do
     IO.write("\n")
     Moves.move(instr, {l1, [], []})
   end
+
+  def t(l1, l2) do
+    Moves.move(Shunt.compress(Shunt.few(l1, l2)), {l1, [], []})
+  end
 end
