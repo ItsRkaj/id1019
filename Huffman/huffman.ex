@@ -2,7 +2,7 @@ defmodule Huffman do
 
   def bench() do
     texts = [text(), sample(), read("kallocain.txt")]
-    IO.write("#{bench(text())}#{bench(read("kallocain.txt"))}#{bench(read("exempeltext.txt"))}")
+    IO.write("#{bench(text())}#{bench(read("kallocain.txt"))}")
   end
 
   def bench(h) do
