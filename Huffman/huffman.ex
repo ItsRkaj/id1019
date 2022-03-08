@@ -69,9 +69,7 @@ defmodule Huffman do
     way(tree, [], [])
   end
 
-  def decode([], _) do
-    []
-  end
+  def decode([], _) do [] end
   def decode(seq, table) do
     {char, rest} = decode_char(seq, 1, table)
     [char | decode(rest, table)]
@@ -92,12 +90,8 @@ defmodule Huffman do
     findway(h, way) ++ encrypt(t, way)
   end
 
-  def findway(ch, [{ch, path} | _]) do
-    path
-  end
-  def findway(ch, [_ | t]) do
-    findway(ch, t)
-  end
+  def findway(ch, [{ch, path} | _]) do path end
+  def findway(ch, [_ | t]) do findway(ch, t) end
 
   def way({left, right}, track, n) do
     l = way(left, [0 | track], n)
@@ -131,12 +125,8 @@ defmodule Huffman do
     end
   end
 
-  def freq(list) do
-    freq(list, [])
-  end
-  def freq([], fr) do
-    fr
-  end
+  def freq(list) do freq(list, [] end
+  def freq([], fr) do fr end
   def freq([h | t], fr) do
     freq(t, member(h, fr))
   end
@@ -151,20 +141,13 @@ defmodule Huffman do
     [h | member(e, t)]
   end
 
-  def huffman(list) do
-    huffmansort(sort(list, []))
-  end
-
-  def huffmansort([{tree, _}]) do
-    tree
-  end
+  def huffman(l) do huffmansort(sort(l, [])) end
+  def huffmansort([{tree, _}]) do tree end
   def huffmansort([{h1, v1}, {h2, v2} | t]) do
     huffmansort(add({{h1, h2}, v1 + v2}, t))
   end
 
-  def add({e, val}, []) do
-    [{e, val}]
-  end
+  def add({e, val}, []) do [{e, val}] end
   def add({e, v1}, [{h, v2} | t]) do
     cond do
       v1 < v2 -> [{e, v1}, {h, v2} | t]
