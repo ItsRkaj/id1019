@@ -77,7 +77,7 @@ defmodule Mandel do
   end
 
   def demo() do
-    small(-2.6, 1.2, 1.2)
+    small(-0.16, 0.9, -0.14)
   end
 
   def small(x0, y0, xn) do
